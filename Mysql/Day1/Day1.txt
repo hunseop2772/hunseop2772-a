@@ -1,0 +1,44 @@
+1. DataBase(데이터 베이스)
+- Data : 자료 
+- DataBase : 저장소, 데이터를 통합하여 관리하는 집합체
+
+// 자바에서 데이터를 저장하는 경우 내가 저장한 파일인지 확인이 어렵다는 경우가 생겨 중복 데이터가 발생할 수 있다.
+// 오름/내림 차순 정렬간 자바에서는 정렬하기 어렵지만 DataBase에서는 간편하게 할 수 있다으며 관리가 편하다.
+
+- DBMS(Database Management System, 데이터베이스 관리 시스템)
+	데이터베이스를 관리해주는 소프트웨어
+                                          
+✔ DBMS를 사용하는이유
+- 중복된 데이터를 제거
+- 효율적인 데이터를 처리
+- 자료를 구조화시킬 수 있음
+- 다양한 프로그램을 사용하는 사용자들과 데이터를 공유
+
+MySQL 다운로드
+1. https://www.mysql.com/downloads/ 로 이동
+2. MySQL Community (GPL) Downloads » 로 이동
+3. MySQL Community Server 로 이동
+4. Windows (x86, 64bit), MySQL Installer MSI로 이동
+5. Windows (x86, 32-bit), MSI Installer 437.7M Download
+6. No thanks, just start my download. 선택
+
+			정보를 요청
+	Client  ---------------->	Server
+		  <----------------
+		  	정보를 제공
+
+	
+관계형(Relational) 데이터베이스 - (RDBMS)		  	
+- Database -> Table(excel과 유사, 실제 데이터가 담기는 부분으로 행과 열로 저장) 
+			행(로우, 레코드),  열(필드, 컬럼, 어트리뷰트(속성))
+- SQL 문법을 사용
+
+SQL(Structured Query Language) - 질문과 답변을 하는 언어
+- 데이터베이스에서 데이터를 정의, 조작, 제어하기 위해 사용하는 언어
+- 데소문자를 구별하지 않음
+- 문자열을 저장할 때 ' '(싱글 쿼트) 만 사용
+ EX)	select * from tb_member where userid = 'apple';
+	
+	자바 -> MySQL 로 실행문을 옮길경우
+	더블 쿼트를 사용하면 문제가 있기 떄문에 싱글쿼트만을 사용한다.
+ EX) String sql = "select * from tb_member where userid = 'apple'";

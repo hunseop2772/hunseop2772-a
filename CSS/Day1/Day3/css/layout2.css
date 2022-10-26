@@ -1,0 +1,41 @@
+#container{
+    width: 1000px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 15px;
+}
+div{
+    padding: 20px;
+    border: 1px solid black;
+}
+
+#header {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid black;
+
+}
+
+#left-sidebar{
+    width: 150px;
+    margin-right: 20px;
+    float: left;
+}
+
+#contents {
+    width: 530px;
+    margin-right: 20px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+#right-sidebar{
+    width: 150px;
+    float: right;
+}
+
+#footer{
+    clear: both;
+    border: 1px solid black;
+    padding: 20px;
+}

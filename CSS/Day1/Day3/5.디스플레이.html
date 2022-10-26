@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디스플레이</title>
+    <style>
+div{
+    background-color: deepskyblue;
+    border: 3px solid red;
+    margin-bottom: 30px;
+}
+
+p#none {display: none;}/*자리와 차지한 공간까지 전부 삭제*/
+p#hidden {visibility: hidden;}/*기존 있는 장소에서 자리는 차지한 상태에서 없어짐*/
+
+    </style>
+</head>
+<body>
+    <h2>디스플레이</h2>
+    <div>
+        <p>display 속성값을 none으로 설정</p>
+        <p id="none">display 속성값을 none으로 설정</p>
+    </div>
+</body>
+<div>
+    <p>visibility 속성값을 hidden으로 설정</p>
+    <p id="hidden">visibility 속성값을 hidden으로 설정</p>
+</div>
+</html>

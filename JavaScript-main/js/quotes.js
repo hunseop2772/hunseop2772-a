@@ -47,5 +47,5 @@ const author = document.querySelector("#quote span:last-child");
 //floor 1.9는 -> 1 , random : 랜덤한 숫자를 출력하게 한다.
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-quote.innerText = todaysQuote.quote;
+quote.innerText = todaysQuote.qoute;
 author.innerText = todaysQuote.author;

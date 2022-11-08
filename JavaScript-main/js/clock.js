@@ -13,6 +13,3 @@ function getClock(){
 
 getClock(); // 함수를 호출하자 근데 계속 시간이 흐를려면 setInterval을 사용!!!
 setInterval(getClock, 1000); // 1초마다
-
-
-

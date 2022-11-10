@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+    <script>
+        const hello = function(){
+            alert(`안녕하세요. JavaScript!`)
+        }
+        const st = window.setTimeout(hello, 2000); //2초 콜벡함수
+        clearTimeout(st);// 실행을 막는것으로 생각하자.
+    </script>
+</head>
+<body>
+    <h2>setTimeout</h2>
+</body>
+</html>

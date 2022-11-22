@@ -1,0 +1,304 @@
+id 선택자
+- 웹 문서안의 특정 부분 스타일을 적용. (#)기호를 사용해서 id 속성을 가진 요소에 스타일을 적용
+
+    h2 { font-size : 30px; }
+    #hello{color : deeppink}
+    /* h2#hello {font-soze : 30px; color: deeppink;}
+
+    <h2 id ="hello">안녕하세요</h2>
+    <h2>반갑습니다</h2>
+
+
+class 선택자
+특정 집단의 요소를 한번에 스타일을 적용. (.)기호를 사용해서 같은 class 이름을 가진 요소에 스타일을 적용
+
+    .hello {font-size: 20px; color: deeppink}
+    h2.hello {font-weight : bold;}
+
+    <h2 class ="hello">안녕하세요</h2>
+    <h2>반갑습니다</h2>
+    <p class="hello">하이</p>
+    <p>또 만났군요</p>
+
+그룹 선택자
+여러개의 요소를 나열하고 (,)로 구분하여 스타일을 적용
+
+    h2, p {text-align: center;}
+
+
+                                <html>
+                    <head>                    <body>
+                 제목<title>           <h2>                <p>
+                                     HTML 구조     안녕하세요   <span> 
+                                                      <b>를 알아볼게요
+                                                        HTML구조
+
+
+자손 선택자
+조상요소 하위의 모든 요소의 스타일을 적용, 자손은 자식을 포함
+
+    body p{color: deeppink}
+
+
+
+자식 선택자
+부모의 요소 하위의 자식요소의 스타일을 적용
+
+    body > p{color: deeppink}
+
+
+일반 형제 선택자
+형제 관계를 갖는 요소 중에서 요소 다음에 나오는 모든 동생 요소의 스타일을 적용
+
+    h2 ~ p {color: deepskyblue;}
+
+인접 형제 선택자
+동일한 부모의 요소를 갖는 자식 요소들의 관계, 연속된 동생 요소의 스타일을 적용
+
+    h2 + p {color: deepskyblue;}
+
+
+속성 선택자
+HTML 요소에서 src, gref, style, id, class..등 속성을 선택자로 지정해서 스타일을 적용
+
+    <img src = "apple.png" alt="사과이미지">
+
+    [src] {border: 3px solid red;}
+    [src="apple.png"] {border: 3px solid red;}
+
+
+가상 선택자
+클래스를 추가할 필요없이 요소 중에서 순서에 따라 원하는 요소를 선택
+
+    <ul>
+        <li>김사과</li>
+        <li>반하나</li>
+        <li id ="orange" class ="orange">오렌지</li>
+        <li>이메론</li>
+
+
+    #orange {color: deepskyblue; }
+    .orange {color: deepskyblue; }
+
+
+li:first-child
+li 요소 중에서 첫번째 해당하는 요소의 스타일을 적용
+
+li:last-child
+li 요소 중에서 마지막에 해당하는 요소의 스타일을 적용
+
+li:nth-child(n)
+li 요소 중에서 n번째 요소의 스타일을 적용(예 : li:ntn-child(2n+1) : )
+- n 은 0부터 시작한다
+
+li:nth-child(odd)
+li 요소 중에서 홀수번째 요소의 스타일을 적용
+
+li:nth-child(even)
+li 요소 중에서 짝수번째 요소의 스타일을 적용
+
+:link
+하이퍼링크가 연결됐을 때 선택자
+
+visited
+특정 하이퍼링크를 방문한적이 있을 때 선택
+
+:hover
+특정 요소에 마우스를 올렸을 때 선택
+
+:active
+특정 요소에 마우스 버튼을 클릭하고 있을 때 선택
+
+::before
+특정 요소 앞에 텍스트, 이미지등을 삽입
+
+::after
+특정 요소 뒤에 텍스트, 이미지등을 삽입
+
+선택자
+--------------------------------------------------------------------------
+
+CSS의 컬러
+1. 색상 이름으로 표현
+    deeppink, deepskyblue, red, blue..
+
+2. RGB 색상값으로 표현
+    rgb(0~255, 0~255, 0~255) - 0에 가까울수록 그 색상이 연하게 나온다고 생각
+    -> rgb(0, 0, 255) - 파랑
+    rgba(0~255, 0~255, 0~255, 0~1의 소수) - 투명,불투명 효과 추가할
+
+3. 16진수 색상값으로 표현
+    #0000ff(파랑) 
+
+    #00 00 ff -> #00f
+     R  G  B
+
+
+CSS의 텍스트
+
+color
+텍스트의 색상을 설정, 기본색은 검정색
+
+letter-spacing
+텍스트 내에서 글자 사이의 간격을 설정
+    안 녕 하 세 요 .  오 늘 은  화 요 일  화 가 나 네 요 .
+
+word-spacing
+텍스트 내에서 단어 사이의 간격을 설정
+    안녕하세요.   오늘은   화요일   화가나네요.
+
+text_align
+텍스트 수평 방향 정렬을 설정
+
+text_indent
+단락의 첫 줄의 들여쓰기를 설정
+
+line-height
+줄 높이를 정하는 속성
+- normal: 1.2 (기본 웹프라우저 기본 값)
+- px, %, 자연수
+- 예) 글자크기가 40px일 때
+    line-height : 1.5 -> 줄 높이는 40의 1.5배인 60px -> 그자 크기가 40px이므로 글자 위와 아래에 각각 10px의 여백이 생김(줄 높이가 글자 크기보다 작으면 세로 방향으로 글자가 겹침)
+
+✔ 브라우저 텍스트 크기
+pc = 16px
+mobile = 12px
+
+
+text-decoration
+텍스트에 여러가지 효과를 설정하거나 제거하는데 사용
+- none, underline, line-through(취소 선, 중간에 선), overline(머리 위)
+
+text-transform
+텍스트에 포함된 영문자에 대한 대소문자를 설정
+- lowercase, uppercase, capitalize
+
+font-variant
+소문자를 작은 대문자로 변경
+- small-caps
+
+text-shadow
+텍스트에 그림자 효과를 설정
+
+    선택자 { text-shadow: 가로거리 세로거리 번짐정도 색상; }
+
+text-overflow
+텍스트를 줄바꿈하지 않았을 때 넘치는 텍스트를 어떻게 처리할지를 결정하는 속성
+- clip, ellipsis
+
+white-space
+스페이스와 탭, 줄바꿈, 자동줄바꿈을 어떻게 처리할지 결정하는 속성
+- nowrap, pre, pre-wrap, pre-line
+   
+            스페이스와 탭           줄바꿈          자동 줄바꿈
+    normal      병합                병합                o
+    nowrap      병합                병합                X
+    pre         보존                보존                X
+    pre-wrap    보존                보존                o
+    pre-line    병합                보존                O
+
+            
+            //병합(변화없음), 보존(내가 쓴것이 보존된다)
+
+overflow
+요소내에 컨텐츠가 너무 커서 모두 보여주기 힘들 때 어떻게 보여줄지 결정하는 속성
+- visible, hidden, scroll, auto 
+
+
+font-size 
+텍스트 크기를 설정
+- 단위 : px, %, em, rem
+
+font-family
+텍스트의 글꼴을 설정
+
+✔ 글꼴을 선택하는 방법
+1. 누구나 설치되어 있는 기본 글꼴 사용
+2. 이미지로 처리
+3. 웹 폰트를 사용
+
+font-weight
+텍스트의 굵기를 설정
+- 기본 굵기는 : 400(범위 100 ~ 900)
+
+------------------------------------------------------------------------------
+
+CSS 배경
+
+background-color
+HTML 요소의 배경색을 설정
+
+background-image
+HTML 요소의 배경으로 나타날 배경 이미지를 설정, 배경 이미지는 기본 설정으로 반복되어 나타남
+
+    background-image: url(파일경로)
+
+background-repeat
+배경 이미지를 수평이나 수직방향으로 반복하도록 설정
+- repeat-X, repeat-y, no-repeat
+
+background-position
+- 반복되지 않는 배경 이미지의 상대 위치를 설정
+- %나 px을 사용해서 상대위치응 직접 설정할 수 있음
+- 상대 위치를 결정하는 기준은 왼쪽 상단9left top)
+
+    left top        center top      right top
+    left center     center          right center
+    left bottom     center bottom   right bottom
+
+    background-position : center bottom
+
+    background-position : 가로위치값 세로 위치값
+    background-position : 10% 100px
+
+background-attachment
+- 위치가 설정된 배경 이미지를 원하는 위치에 고정시킬 수 있음
+- 고정된 배경 이미지는 스크롤과 무관하게 화면의 위치에서 이동되지 않음
+
+
+background-size
+- 배경 이미지 크기를 설정
+- px, %를 사용
+- contain
+    배경 이미지의 가로, 세로 모두 요소보다 작다는 조건하에 가능한 설정
+    가로, 세로 비율은 유지
+    배경 이미지의 크기는 요소의 크기보다 항상 작거나 같음
+- cover
+    배경 이미지의 가로, 세로, 길이 모두 요소보다 크다는 조건하에 가능한 설정
+    배경 이지미의 크기는 요소의 크기보다 항상 크거나 같음
+
+//background-size 스네이크 표기법, backgroundSize 카넬표기법
+
+ background
+ 배경 속성을 한번에 적용
+
+    background 파일위치 반복여부 위치 사이즈...
+
+   무료 JPG 사이트 - 픽사베이 https://pixabay.com/ko/ 
+
+   과제
+
+   쇼핑몰의 상세페이지를 하나 선택하여 만들기
+   (본인의 웹사이트에 "상세페이지" 메뉴로 등록)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

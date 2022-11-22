@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 텍스트 2</title>
+    <style>
+        p{
+            border: 3px solid red;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        .align-left { text-align: left;}
+        .align-right { text-align: right;}
+        .align-center { text-align: center;}
+        .align-justify { text-align: justify;}
+
+        #indent1 {text-indent:20px;}
+        #indent2 {text-indent:10%;}
+
+        #small-line {line-height: 0.7;}
+        #big-line {line-height: 3;}
+        #px-line {line-height: 30px;}
+        /*기본 16px 에서 30px이면 위아레로 7px만큼 공간이 더 있는것이다.*/
+        #per-line {line-height: 50%;}
+    </style>
+</head>
+<body>
+    <h2>CSS 텍스트 2</h2>
+    <p class="align-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, laudantium accusamus eos sequi animi quaerat non suscipit at veritatis eum odit numquam voluptatem libero totam. Amet provident animi cumque quis?</p>
+    <p class="align-right">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, laudantium accusamus eos sequi animi quaerat non suscipit at veritatis eum odit numquam voluptatem libero totam. Amet provident animi cumque quis?</p>
+    <p class="align-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, laudantium accusamus eos sequi animi quaerat non suscipit at veritatis eum odit numquam voluptatem libero totam. Amet provident animi cumque quis?</p>
+    <p class="align-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, laudantium accusamus eos sequi animi quaerat non suscipit at veritatis eum odit numquam voluptatem libero totam. Amet provident animi cumque quis?</p>
+    <hr>
+    <p id="indent1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem repudiandae natus neque eum fuga, porro ipsa blanditiis numquam autem sit reiciendis eligendi aut error, officia obcaecati ratione temporibus nesciunt eius.</p>
+    <p id="indent2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem repudiandae natus neque eum fuga, porro ipsa blanditiis numquam autem sit reiciendis eligendi aut error, officia obcaecati ratione temporibus nesciunt eius.</p>
+
+    <hr>
+    <p id = "small-line">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum vitae dolorum, commodi, dicta maiores delectus qui, veniam non facere quia soluta id aut error facilis consequuntur harum illo itaque consectetur!</p>
+    <p id="big-line">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum vitae dolorum, commodi, dicta maiores delectus qui, veniam non facere quia soluta id aut error facilis consequuntur harum illo itaque consectetur!</p>
+    <p id="px-line" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum vitae dolorum, commodi, dicta maiores delectus qui, veniam non facere quia soluta id aut error facilis consequuntur harum illo itaque consectetur!</p>
+    <p id="per-line">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum vitae dolorum, commodi, dicta maiores delectus qui, veniam non facere quia soluta id aut error facilis consequuntur harum illo itaque consectetur!</p>
+</body>
+</html>

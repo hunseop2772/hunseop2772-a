@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+    <%
+    	Cookie[] cookies = request.getCookies(); /* 쿠키불러오기 */
+    	
+    	if(cookies != null){
+    		for(Cookie cookie : cookies){
+    			if("userid".equals(cookie.getName())){
+    				Cookie newCookie = new Cookie("userid","");
+    				newCookie.setMaxAge(0);
+    				response.addCookie(newCookie);
+    			}
+    		}
+    	}
+    
+    %>
+    
+   <script>
+   alert('로그아웃 되었습니다.')
+   location.href = '3_login.jsp';
+   </script>
+    

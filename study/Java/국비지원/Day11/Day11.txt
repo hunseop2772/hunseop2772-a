@@ -1,0 +1,58 @@
+JDBC(Java Database Connectivity)
+자바에서 DB 소프트웨어와 연결하여 프로그램을 개발하기 위해 사용하는 API
+
+    자바 어플리케이션 <--------> JDBC API <---------> JDBC Driver <----------> MySQL
+
+JDBC Driver 다운로드 - 라이브러리
+- dev.mysql/downloads/connector/j
+- platform Independent 선택
+- No thanks, just start my download.
+- zip 파일 다운로드
+- 암축풀고 mysql-connector-j-8.0.31.jar 파일을 원하는 디렉토리에 저장
+
+라이브러리 : 도구(툴) - (공사를 위한 도구, 툴)
+프레임워크 : 틀(비워쟈 있는 건축물) - (이미 만들어진 건축물)
+
+인텔리제이 JDBC 드라이버 추가
+file -> Project Structure -> Library -> + 버튼 -> Java -> 드라이버 jar파일 선택 -> ok
+
+JDBC API를 통해 DBMS와 연결
+1. JDBC Driver를 로딩
+    Class.forName("JDBC 드라이버 패키지명");
+    Class.forNmae("com.mysql.cj.jdbc.Driver"); // 대소문자 구분핵서 써야한다.
+2. JDBC API와 DBMS 연결
+    DriverManager.getConnection(주소, 아이디, 비밀번호); //연결을 성공하면 Connection 객체가 생성
+    주소 : jdbc:mysql//ip주소/db명?userSSL=true
+
+과제.
+aidev 데이터베이스를 다룰 수 있는 계정(자신이 원하는 계정 생성)으로 접속하여 tb_member에 사용자를
+insert하는 프로그램을 만들어보자.
+
+
+문제.
+	banana 계정을 만들어 test 데이터베이스에만 접근이 가능한 계정으로 권한 생성하기
+		create user 'banana'@'%'identified by'2222';
+		grant all privileges on test.* to 'banana'@'%';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+문제. jdbc1을 참고하여 jdbc2 클래스에 회원가입 수정 프로그램을 작성해보자
+1. 아이디를 기준으로 수정
+2. sql 쿼리를 저장할 객체는 StringBuilder 사용
+
+싱글톤 패턴 이용한 DB연결
+싱글톤 패턴 : 디자인 패턴 중 하나로 매번 드라이버를 로드하지 않고 프로세스에서 객체를 단 하나만 만들어
+재활용할 수 있도록 공유자원을 생성하는 방법
+
+✔ 디자인 패턴
+소프트웨어를 설계할 때 특정 맥락에서 자주 발생하는 고질적인 문제들이 발생했을 때 재사용할 수 있는
+해결책을 다룬 알고리즘
+
+PreparedStatement 인터페이스
+- Statement와 PreparedStatement의 차이는 캐시 사용 유무
+- 객체를 캐시에 담아 재사용
+- 반복적으로 쿼리를 수행한다면 statement에 비해 성능이 많이 좋음
+- statement 보안상 취약점이 발견되었기 때문에 PreparedStatement를 사용하는 것을 권장하고 있음
+- 코드가 길어질 수 있음
+
+    statement
+    StringBuilder sql = new StringBuilder();
+            sql.append("delete from tb_member")
+                    .append("where mem_userid ='"+mem_userid+"'");
+
+    PreparedStatement
+    StringBuilder sql = new StringBuilder();
+                sql.append("delete from tb_member")
+                        .append("where mem_userid ='"+mem_userid=?");
+   PreparedStatement pstmt = conn.PreparedStatement(sql.toString());
+   pstmt.setString(1, mem_userid);
+   pstmt.executeUpdate();
+
+Result 인터페이스
+- 결과를 저장할 수 있는 객체
+- 저장된 값을 로우 단위로 불러올 수 있음
+- 로우 단위로 데이터를 가져올 경우 타입을 지정하여 불러올 수 있음
+
+    StingBuilder sql = new StringBuilder();
+    sql.append("select * from tb_member where mem_userid = ? and mem_pw =?");
+    Connection conn = Dbconn.getConnection();
+    PreparedStatement pstmt = Conn.prepareStatement(sql.toString);
+    pstmt.setString(1, mem_userid);
+    pstmt.setString(2, mem_userpw);
+    pstmt.executeQuery();
+
+문제.
+아이디, 비밀번호를 입력받아 로그인 프로그램을 작성해보자.
+아이디를 입력하세요 > apple
+비밀번호를 입력하세요 > 1111
+로그인 되었습니다. (아이디 또는 비밀번호를 확인하세요)
+
+
+✔ DTO(Data Transfer Object) - 저장공간이라고 생각하자 DB에 저장하는...
+- 계층간 데이터를 교환하기 위한 자바빈즈를 뜻함
+- 순수한 데이터의 객체
+- getter, setter 메소드를 가지고 있음
+- DTO와 VO(Value Object)를 혼용해서 사용(VO 읽기전용)
+
+✔ DAO(Data Access Object) - sql과 연동
+- 데이터베이스의 데이터에 접근하기 위해 생성하는 객체
+- 데이터베이스에 접근하기 위한 로직과 비즈니스 로직을 분리하기 위해 사용
+- DB에 접근하여 데이터의 CRUD(생성, 읽기, 갱신, 삭제) 작업을 하는 클래스
+- 코드의 간결화 및 모듈화, 유지보수등의 목적을 위해 생성하여 사용하는 것이 권장
+- DB를 사용하여 데이터의 조회 및 조작하는 기능을 전담하는 오브젝트
+
+과제.
+테이블 생성
+학생 테이블
+학번, 이름, 연락처, 성별, 주소, 등록날짜
+- 학번은 primary key 등록
+성적 테이블
+학번, 국어점수, 수학점수, 등록날짜
+- 학번은 외래키로 등록
+
+*********** 메뉴 **********
+1. 학생 등록
+2. 학생 리스트
+3. 학생 수정
+4. 학생 삭제
+5. 성적 등록
+    성적을 등록할 학번을 입력하세요. 00000001
+    국어점수를 입력하세요
+    수학점수를 입력하세요
+    영어점수를 입력하세요
+6. 성적 보기 - 조인이 되어야 볼 수 있음
+    학번 이름 국어점수 수학점수 영어점수 총점 평균
+7. 프로그램 종료
+
+
+
+
+
+
+
+
+
+

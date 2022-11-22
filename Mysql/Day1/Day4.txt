@@ -1,7 +1,0 @@
-SELECT * FROM tb_member;
-use aidev;
-set foreign_key_checks =0;
-set foreign_key_checks =1;
-drop table tb_member;
-
-create 

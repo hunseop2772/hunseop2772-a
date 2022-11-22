@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Attribute</title>
+    <style>
+        div {
+            width: 500px;
+            height: 200px;
+            background-color: deepskyblue;
+            margin-bottom: 30px;
+        }
+        div[data-display-name='apple']{
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <h2>Data Attribute</h2>
+    <div data-index="1" data-display-name="apple" data-nick-name="사과"></div>
+    <div data-index="2" data-display-name="banana"></div>
+    <div data-index="1" data-display-name="apple">김사과</div>
+    <script>
+        const apple1 = document.querySelector('div[data-display-name="apple"')
+        const apple2 = document.querySelectorAll('div[data-display-name="apple"')
+        console.log(apple1);
+        console.log(apple2);
+        console.log(apple1.dataset);
+        console.log(apple1.dataset.displayName);
+        console.log(apple1.dataset.displayNick);
+        console.log(apple1.dataset.index);
+        // 데이터 하이푼으로 만들면 디스플레이 네임이나 인덱스를 사용할 수 있다.
+    </script>
+    <div></div>
+    <div></div>
+</body>
+</html>

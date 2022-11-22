@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigator</title>
+    <script>
+        const success = function(loc){
+            console.log(loc.coords.latitude);
+            console.log(loc.coords.longitude);
+        }
+        const fail = function(msg){
+            console.log(msg.code);
+        }
+
+        navigator.geolocation.getCurrentPosition(success, fail);
+        // 콜벡함수 getCurrentPosition에 해당하는 데이터가 있으면 스스로 가저오는 것이다. 성공하면 success 실패하면 fail에 데이터가 들어가게 된다. 앞이 성공 뒤가 실패를 알자.
+        // interval과 timeout도 콜벡함수이다.
+
+    </script>
+</head>
+<body>
+    <h2>navigator</h2>
+</body>
+</html>

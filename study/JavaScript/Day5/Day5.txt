@@ -1,0 +1,70 @@
+문제.
+1. num으로 전달받은 숫자를 1부터 출력 (만약 5를 전달했다면 1 2 3 4 5 출력)
+2. num으로 전달받은 숫자의 제곱을 출력(만약 2를 전달했다면 4를 출력)
+function iterate(num, action){
+
+}
+
+
+문제. 
+카운터 만들기
+- 0으로 값을 초기화 한 뒤 하나씩 숫자를 증가할 수 있는 카운터 만들기
+
+class Counter {
+
+}
+
+const counter = new Counter(0);
+counter.increment(); //1
+counter.increment(); //2
+console.log(counter.value); // 2
+
+
+문제. 
+정직원, 파트타임직원을 나타낼 수 이쓴ㄴ 클래스를 생성
+직원의 정보 : 이름, 부서명, 한달 근무 시간
+정직원은 시간당 : 20000원
+파트타임 직원은 시간당 : 10000원
+- 메딜 직원들의 정보를 이용해서 한달 급여를 계산할 수 있음
+
+class Employee{
+
+}
+
+class FullTimeEmployee extends Employee{
+
+}
+
+class PartTimeEmployee extends Employee{
+    
+}
+
+const Kim = new FullTimeEmployee('김사과', '개발자', 160);
+const Kim = new PartTimeEmployee('반하나', '개발자', 100);
+
+
+래퍼 객체(Wrapper Object)
+const num = 10;
+console.log(num);   // 10
+
+
+URL, URI(Uniform Resource Identifier)
+- 아스키 문자로만 구성되야 함
+- 한글이나 특수문자는 이스케이프 처리
+const URL = 'http://www.코리아아이티아카데미.com';
+const encoded = encodeURI(URL); // 인코딩 - 이스케이프 처리
+const decoded = decodeURI(encoded); // 디코드 - 원래대로 원복 
+
+전체 URL이 아닌 부분 이스케이프 처리
+const part = '코리아아이티아카데미.com';
+const result = encodeURIComponent(part); // 부분 이스케이프
+
+
+과제.
+const num4 = 0.1 + 0.2 - 0.2;
+console.log(num4);
+왜 0.10000000000000003 이렇게 나오지?
+
+Number.EPSILON
+0.1 === num4 ?
+코딩에플

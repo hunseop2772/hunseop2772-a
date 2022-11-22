@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호이스팅</title>
+    <script>
+
+        func1();
+       
+        
+
+        function func1(){// 먼저 위로 가서 위에서 함수를 호출해도 문제는 없다
+            alert('func1 호출되었음!')
+        } // 호이스팅이 된다. -> 변수선언은 var는 사용하지 말고 let이나 잘확인하자.
+
+        const func2 = function(){
+            alert('func2 호출되었음!')
+        }// 표현형은 먼저 쓰는것은 불가능하다. 
+    // 이상한것을 사용하지 말자는 내용때문에 let이나 호이스팅이 안되는 방법이 나왔다.
+
+        func2();
+        
+    </script>
+</head>
+<body>
+    <h2>호이스팅</h2>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+#container {
+    width: 100%;
+    margin: 0 auto;
+   
+}
+
+nav {
+    height: 100px;
+    margin: 0 auto;
+    
+}
+nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 3px;
+    
+}
+nav > ul>li, h1{
+    display: inline-block;
+    margin: 15px 20px;
+    font-size: 25px;
+    
+}
+
+
+
+h1{font-size: 40px;}
+
+li:active{color: yellow;}
+li:hover{color: yellow;}
+
+header {
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+}
+
+li> .userid{
+    width: 1000px;
+}
+#menus {
+    width: 100%;
+}
+
+#menus > div {
+    position: relative;
+    height: 300;
+    border: 1px solid black;
+    margin-bottom: 15px;
+}
+
+#menue1, #menue2, #menue3, #menue4, #menue6, #menue7, #menue8, #menue9, #menue10 {
+    width: 100%;
+}
+
+#menue1 {
+    background: url(../이미지/dish1.jpg) no-repeat center;
+    background-size: cover;
+}

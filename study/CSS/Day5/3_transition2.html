@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition2</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        #ex{
+            position: relative;
+            width: 800px;
+            height: 400px;
+            margin: 0 auto;
+            border: 5px solid black;
+            padding: 30px;
+            
+          
+           
+        }
+
+        #ex:hover > .box{
+            transform: rotate(72000deg);
+            margin-left: 650px;
+            border-radius: 100%;
+            background: yellow;
+            background: -webkit-linear-gradient(left, pink, yellow, blue);
+            /*크롬 엣지를 위한 코드*/
+            background: -o-linear-gradient(left, pink, gray, blue);
+             /*오페라를 위한 코드*/
+            background: -ms-linear-gradient(left, pink, gray, blue);
+             /*익스플로러를 위한 코드*/
+            background: -moz-linear-gradient(left, pink, gray, blue);
+             /*파이어폭스를 위한 코드*/
+            background: linear-gradient(left, pink, gray, blue);
+             /*CSS 표준 문법 코드*/
+        }
+
+        #no-dilay{
+            transition-duration: 15s;
+         
+            
+        }
+        #delay{
+            transition-delay: 3s;
+            transition-duration: 20s;
+       
+        }
+      
+        p {
+            text-align: center;
+            padding-top: 50px;
+            font-weight: bold;
+        }
+
+        .box{
+            font-size: 20px;
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin-bottom: 50px;
+            background-color:  pink;
+        }
+    </style>
+</head>
+<body>
+    <h2>transition2</h2>
+    <div id="ex">
+        <div id ="no-dilay" class="box">
+            <p>༼ つ ◕_◕ ༽つ</p>
+        </div>
+        <div id="delay" class="box">
+            <p>(つ ⌐■_■ )つ</p>
+        </div>
+    </div>
+</body>
+</html>

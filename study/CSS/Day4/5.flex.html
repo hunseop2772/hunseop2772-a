@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 4</title>
+    <style>
+  
+    #container{
+        width: 1000px;
+        height: 500px;
+        margin: 0 auto;
+        border: 3px solid red;
+        display: flex;
+         flex: nowrap;  
+
+        
+    }
+    #container > div{
+        width: 400px;
+        border: 1px solid black;
+        background-color: gold;
+    }
+    h2{
+        font-size: 50px;
+        font-weight: bold;
+        padding: 20px;
+    }
+    .item {
+        /* flex-basis: auto;기본값 auto */
+        flex-basis: 100px;/*글자가 커저 선언값을 넘어가면 그 부분은 그냥 넘어간다*/
+        /* word-wrap: break-word; */
+        /* flex-grow: 1; */
+    }
+    /*비율로 크기를 지정한다. flex-grow 2 와 같이*/
+    .item:nth-child(1){flex-grow: 1; flex-shrink: 1;}
+    .item:nth-child(2){flex-grow: 2; flex-shrink: 1;}
+    .item:nth-child(3){flex-grow: 1; flex-shrink: 1;}
+    </style>
+</head>
+<body>
+    <h2>flex 4</h2>
+    <div id="container">
+        <div id="box1" class = "item"><h2>1</h2></div>
+        <div id="box2" class = "item"><h2>2</h2></div>
+        <div id="box3" class = "item"><h2>3</h2></div>
+    </div>
+</body>
+</html>

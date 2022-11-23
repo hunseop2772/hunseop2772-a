@@ -1,8 +1,0 @@
-과제.
-1. 아래 로직페이지를 서블릿으로 작성
-info_ok.jsp
-write_ok.jsp 
-
-2. view.jsp 
-조회수 증가 : view.jsp 입장시 b_hit에 +1
-좋아요 : 좋아요 버튼을 만들고 클릭시 b_like + 1 (Ajax)

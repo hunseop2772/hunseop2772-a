@@ -1,0 +1,81 @@
+Promise
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise
+- 프로미스 자바스크립트 비동기 처리에 사용되는 객체
+- 주로 서버에서 받아온 데이터를 화면에 표시할 때 사용
+
+    프로미스를 리턴받은 객체
+    .then(정상적으로 프로미스 객체가 리턴되었다면 필요한 일을 수행)
+    .catch(에러객체가 리턴되었다면 에러를 처리)
+    .finally(최종적으로 처리할 일을 수행)
+
+async/await
+- callback, Promise 비동기처리를 좀더 쉽게 처리할 수 있도록 사용됨
+- ES7(2017)에 추가된 문법
+
+    비동기 처리될 전체 함수앞에 async를 붙여줌
+    async function 함수명(){
+        ...
+
+    }
+    2. 결과를 리턴받는 함수앞에 await를 붙여줌
+    async function 함수명(){
+        변수명 = await 함수명();
+        ...
+    }
+
+
+JSON(JavaScript Object Notation)
+- 데이터를 저장하거나 전송할 때 사용되는 경량의 DATA 교환 형식
+- 사람과 기계 모두 이해하기 쉬우며 용량이 작아서 XML을 대체하여 데이터 전송등에 많이 사용
+- 데이터 포멧일 뿐, 통신 방법도 프로그래밍 문법도 아님
+
+JSON의 특징
+- 서버와 클라이언트간의 교류에서 일반적으로 많이 사용
+- 자바스크립트를 이용하여 JSON 형식의 문서를 자바스크립트 객체로 변환하기 쉬움
+- 자바스크립트 문법과 굉장히 유사하지만 텍스트 형식일 뿐임
+- 특정 언어에 종속되지 않으며 대부분 프로그래밍 언어에서 JSON 포멧의 데이터를 핸들링 할 수 있는 라이브러리를 제공
+
+{
+    "name":"루시",
+    "age":13,
+    "family":"포메",
+    "weight":3.5
+}
+
+✔ JSON은 이름과 값으로 구성된 프로퍼티의 정렬되지 않은 집합, 자바스크립트 객체와 다른점은
+메소드 프로퍼티가 없음
+
+JSON의 구조
+- 이름과 값의 쌍으로 이루어짐
+- 데이터는 쉼표로 구분하여 나열
+- {}중괄호로 둘러싸여 표현
+- 배열은 []대괄호로 둘러싸여 표현
+
+JSON의 타입
+- 숫자(number)
+- 문자열(string)
+- 불리언(boolean)
+- 객체(object)
+- 배열(array)
+- null
+
+{
+"dog":[
+    {"name":"루시", "age":13, "family":"포메", "weight":3.5},
+    {"name":"뽀미", "age":5, "family":"폼피츠", "weight":5.5},
+    {"name":"뽀리", "age":7, "family":"포메", "weight":2.5}
+]
+}
+
+
+stringfy(object): JSON
+객체를 문자여로 변환(직렬화, Serializing)
+
+parse(JSON): object
+문자열 데이터를 자바스크립트 객체로 변환(역직렬화, Deserializing)
+
+
+과제
+인터넷에서 JSON API를 자유롭게 검색하고 해당 API를 호출하여 페이지에 출력하는 예제를 만들어보자.
+- get방식
+- post방식

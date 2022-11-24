@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+    <script>
+        function fetchAPI(){
+        return fetch('https://apis.data.go.kr/1320000/PlanCrossRoadInfoService/getPlanCRHDInfo?serviceKey=8vAv582MVIkob1bWF4XpGskf26QSXqN6LBzZ%2Fv96qfIMEm237oWaIu0QUSYC6nv1IqX1peveczHSPu52VC0utg%3D%3D&type=json&srchCTId=L01&srchCRNm=%EC%8B%9C%EC%B2%AD&pageNo=1&numOfRows=10')
+            .then((response) => response.json())
+            .then((data) => data);
+        }
+
+        fetchAPI().then((datas) => {
+            console.log(datas);
+            showDatas(datas);
+        });
+
+        function showDatas(datas){
+            const ulElement = document.querySelector('#dataseries');
+            ulElement.innerHTML = datas.map((data) => setLiElement(data)).join("");
+        }
+
+        function setLiElement(data){
+            return `<li>REGION_CD:${data.REGION_CD} INT_PLAN_NO:${data.INT_PLAN_NO} HOLY_PLAN_DD:${data.HOLY_PLAN_DD} INT_NO:${data.INT_NO} HOLY_PLAN_MM:${data.HOLY_PLAN_MM} INT_NM:${data.INT_NM} COLLCT_DTIME:${data.COLLCT_DTIME} PLAN_SN:${data.PLAN_SN} </li>`
+        }
+    </script>
+    <style>
+        ul{
+            font-size:30px;
+            color:deeppink;
+            list-style: none;
+            line-height: 250%;
+        }
+    </style>
+</head>
+<body>
+    <h2>json</h2>
+    <ul id="dataseries">
+    </ul>
+</body>
+</html>

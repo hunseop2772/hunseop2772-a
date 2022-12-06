@@ -1,0 +1,17 @@
+스프링 프로젝트 구조
+src > main > java : 자바  코드
+src > main > resources > application.properties : 설정정보
+src > main > resources > static : 정적 컨텐츠(html, css, js)
+src > main > resources > templates : 동적 템플릿
+
+src > test > java : 테스트용 자바코드 작성
+
+build.gradle : 버전 관리
+
+테이블 정의서
+(엔티티정의서)
+- 보통 엑셀로 작성하며 테이블 및 컬럼명과 데이터 타입등을 작성해놓은 문서
+
+ERD(Entity Relationship Diagram)
+- 개체-관계 모델, 테이블간의 관계를 설명해주는 다이어그램
+- DB의 구조를 한눈에 파악할 수 있음

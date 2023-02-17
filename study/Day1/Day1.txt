@@ -1,0 +1,115 @@
+영상(image)
+픽셀(pixel) : 바둑판 모양의 격자에 나열괴어 있는 형태, 2차원 행렬
+
+1. 그레이스케일 영상
+    - 흑백사진처럼 색상 정보가 없는 영상
+    - 밝기 정보만으로 구성된 영상
+    - 밝기 정보는 256단계로 표현(0 ~ 255)
+    - numpy.uint8 = 8bit = 1byte
+    - 가로크기 * 세로크기 = 28 * 28 = 784 bytes
+
+2. 트루컬러 영상
+    - 컬러사진처럼 색상 정보를 가지고 있기 때문에 다양한 색상을 표현할 수 있는 영상
+    - red, green, blue 색 성분을 사용하고, 각 256단계로 표현
+    - 픽셀의 표현 -> (255, 255, 255)
+    - 튜플, numpy.ndarray = 3byte
+    - 가로크기 * 세로크기 * 3 = 28 * 28 * 3 = 2352 bytes
+
+영상 파일 형식
+1. bmp
+    - 픽셀 데이터를 압축하지 않고 그대로 저장
+    - 용량이 매우 큼
+    - 파일 구조가 단순해서 별도의 라이브러리 없이 프로그래밍이 가능
+2. jpg, jpeg
+    - 압축률이 좋아서 파일 용량이 크게 감소
+    - 사진과 같은 컬러영상을 저장
+    - 손실 압축(복사 붙여넣기 하는 경우 특정 이미지의 알고리즘으로 실제 값들이 손실된다)
+3. gif
+    - 움직이는 영상 지원(움짤)
+    - 256색 이하의 영상을 저장
+    - 무손실 압축
+4. png
+    - 무손실, 손실 압축
+    - 알파 채널(투명도)을 지원 -> Ex)사진 합성
+
+OpenCV 라이브러리 : 실시간 이미지 프로세싱에 중점을 둔 라이브러리이다
+- 1999년 인텔이 주도적으로 개발시작(이후 오픈소스로 개발)
+- 영상처리에 관련된 라이브러리
+- C로 구현 : 함수&구조체 -> v1
+- 2011년 이후 opencv2 -> v2 ~
+https://docs.opencv.org/4.x/   -  opencv 소개 주소
+
+
+pip install opencv-python  : opencv 설치
+
+matplotlib 설치
+pip install matplotlib
+
+그레이스케일 영상 출력
+1. plt.imshow() 함수에서 컬러맵(cmap)을 gray로 설정
+2. opencv에서 영상을 부를 때 cv2.IMREAD_GRAYSCALE을 사용
+
+컬러 영상 출력하기
+1. 컬러 영상의 새강정보는 RGB 순서
+2. cv2.imread() 메소드로 불러온 영상의 색상 정보는 BGR 순서이기 때문에 matplotlib에서 출력하려면
+    RGB 순서로 cv2.cvtColor() 메소드를 사용하여 변경해야 함
+
+
+영상의 속성과 픽셀값
+OpenCV는 영상 데이터를 numpy.ndarray로 표현
+
+    img = cv2.imread('cat.bmp', cv2.IMERAD_GRAYSCALE)
+    --------
+    numpy.ndarray
+
+    img.shape : 각 차원의 크디. 그레이스케일은 (h, w)이며 컬러영상은 (h, w, 3)
+    img.size : 전체 원소의 개수
+    img.dtype : 원소의 데이터 타입. 영상 데이터 uint8
+
+지정한 크기로 영상 생성하기
+numpy.empty() : 임의의 값으로 초기화된 배열을 생성
+numpy.zeros() : 0으로 초기화된 배열을 생성
+numpy.ones() : 1로 초기화된 배열을 생성
+numpy.full() : 원하는 값으로 초기화된 배열을 생성
+
+
+직선 그리기
+cv2.line(영상, 직선의 시작점과 끝점, 선색상, 선두께, 선타입)
+
+사각형 그리기
+cv2.rectangle(영상, 사각형 꼭지점 좌표, 선색상, 선두께)
+* 선두께가 -1 으로 설정하면 사각형 내부를 색상으로 채움
+
+원 그리기
+cv2.circle(영상, 원의 중앙좌표, 반지름, 선색상, 선두께)
+
+문자열 출력하기
+cv2.putText(영상, 문자열, 영상에서 문자열을 출력할 위치의 좌표, 글꼴, 폰트크기)
+
+* 글꼴
+FONT_HERSHEY_SIMPLEX
+FONT_HERSHEY_PLAIN
+FONT_HERSHEY_DUPLEX
+FONT_HERSHEY_COMPLEX
+FONT_HERSHEY_TRIPLEX
+FONT_HERSHEY_COMPLEX_SMALL
+
+동영상 처리하기
+cv2.VideoCapture 클래스
+- 카메라와 동영상으로부터 프레임(frame)을 받아오는 작업을 처리함
+
+카메라 영상
+cv2.VideoCapture(index)
+index: 시스템의 기본 카메라를 open 하려면 0또는 숫자를 사용
+
+cv2.VideoCapture.isOpened()
+True : 성공
+False : 실패
+
+cv2.CAP_PROP_FRAME_WIDTH : 카메라로 읽어들인 영상의 가로 사이즈
+cv2.CAP_PROP_FRAME_HEIGHT : 카메라로 읽어들인 영상의 세로 사이즈
+
+cv2.VideoCapture.read()
+영상의 프레임과 프레임이 제대로 리턴되었는지 여부
+ret : 영상이 정상적으로 리턴되었는지 여부 (True, False)
+frame : 영상

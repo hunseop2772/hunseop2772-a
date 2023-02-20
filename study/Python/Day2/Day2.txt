@@ -1,0 +1,26 @@
+FourCC(Four Character Code)
+- 4바이트로 된 문자열은 데이터 형식을 구분하는 고유 글자로 쓰임
+- 영문 알파벳 네글자로 데이터를 구분하므로 사람이 읽기 쉽고 외우기 쉽도록 개발
+- 주로 AVI 파일의 영상 코덱을 구분할 때 사용
+- 사용 가능한 코덱은 Divx, Xvid, H264
+
+    cv2.VideoWriter_fourcc(*'FMP4')
+    cv2.VideoWriter_fourcc(*'DIVX')
+    cv2.VideoWriter_fourcc(*'XVID')
+    cv2.VideoWriter_fourcc(*'mp4') # mp4로 저장
+    ...
+
+cv2.VideoWriter(파일명, FourCC, fps, 프레임사이즈, 컬러영상여부)
+    프레임사이즈 :(WIDTH, HEIGHT)의 튜플
+    컬러영상여부 : 컬러영상이면 True, 흑백영상이면 False
+
+    # 코덱 : 코덱은 어떠한 데이터 스트림이나 신호에 대해,
+    인코딩이나 디코딩, 혹은 둘 다를 할 수 있는 하드웨어나 소프트웨어를 일컫는다
+
+문제
+두개의 동영상 파일을 읽어 연결하는 프로그램을 만들어보자
+
+키보드 이벤트
+cv2.waitKey(delay)
+delay : 밀리초 단위 대기 시간(0보다 작거나 같으면 무한 기다림, 기본값은 0)
+return : 아스키코드(ESC: 27, ENTER : 13, TAB : 9 ..)

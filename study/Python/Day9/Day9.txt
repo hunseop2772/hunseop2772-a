@@ -1,0 +1,28 @@
+cv2.isContourConvex()
+contour에 오목한 부분이 있는지 체크(있다면 False 없으면 True)
+
+cv2.convexHull()
+contour에 오목한 부분을 제거
+
+테서렉트 다운로드
+http://github.com/UB-Mannhein/tesseart/wiki
+
+2023-03-15일 기준
+tesseract-ocr-w64-setup-5.3.0.20221222.exe (64 bit) resp. 다운로드
+
+- 설치중 Additional script data 항목에서 'Hangul Script', 'Hangul vertical Script' 항목 체크
+- Additonal language data 항목에서 'Korean' 항목 체크
+
+C:\Program Files\Tesseract-OCR
+
+확경 설정
+탐색기 -> "내 pc"에서 마우스 오른쪽 버튼 클릭 "속성"을 선택 -> 우측 메뉴 중 고급 시스템 설정을 클릭
+-> "환경 변수" 버튼 클릭 -> 시스템 변수에서 "path"를 찾아 클릭하고 편집 버튼을 클릭
+-> "새로 만들기" 버튼을 클릭 -> 테서렉트 설치 경로를 추가 (C:\Program Files\Tesseract-OCR) 추가하고 확인
+
+
+파이썬에서 테서렉트를 설치
+pip install pytesseract
+
+과제.
+차량 번호판 인식 OCR 프로그램 만들기
